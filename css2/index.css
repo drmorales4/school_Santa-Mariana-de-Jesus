@@ -1,0 +1,19 @@
+section.misionVision{
+
+  padding: 3em 0em;
+
+}
+.logo img{ 
+  height:70px;
+
+}
+.logofooter img{
+  height:200px;
+  padding: 0em 1em;
+
+}
+
+nav{
+  position: fixed;
+  box-shadow: 0 0 10px 0  rgba(0, 0, 0, .5);
+}

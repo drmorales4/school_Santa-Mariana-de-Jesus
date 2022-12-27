@@ -1,0 +1,20 @@
+
+
+nav{
+  position: fixed;
+  box-shadow: 0 0 10px 0  rgba(0, 0, 0, .5);
+}
+
+
+
+
+  h4 {
+    font-size: 26px;
+  }
+  
+
+  section.ingresar{
+    width: 30%;
+    padding: 3em;
+}
+
