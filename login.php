@@ -107,11 +107,11 @@
 
 	<body>
 		<!-- encabezado -->
-		 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
 
       <div class="logo">
-        <a class="navbar-brand" href="index.html"><img src="images/logo-santa-mariana-de-jesus.png"></a>
+        <a class="navbar-brand" href="index.html"><img src="images/logo-santa-mariana-de-jesus-3.png"></a>
       </div>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -128,12 +128,11 @@
           <li class="nav-item"><a href="" class="nav-link">TEMA 6</a></li>
           <li class="nav-item"><a href="" class="nav-link">TEMA 7</a></li>
           <li class="nav-item"><a href="" class="nav-link">TEMA 8</a></li>
-          <li class="nav-item cta"><a href="login.php" class="nav-link"><span>Iniciar sesión</span></a></li>
+          <li class="nav-item cta"><a href="login.php" class="nav-link" background-color="#F08080";>Dejanos tu comentario</a></li>
         </ul>
       </div>
     </div>
   </nav>
-		    <!-- END nav -->
 
 		<section class="ftco-search-course">
     	<div class="container">
@@ -174,7 +173,7 @@
 				<div class="box-wrapper">				
 					<div class="box">
 						<div class="box-body">
-						<center> <h4 style="font-family: Poppins;">Iniciar Sesión</h4></center><br>
+						<center> <h4 style="font-family: Poppins;">Deja tu comentario</h4></center><br>
 							<form method="post" action="login.php" enctype="multipart/form-data">
 								<div class="form-group">
 									<label style="font-family: Poppins;">Usuario:</label>
@@ -186,7 +185,7 @@
 									<input type="password" autocomplete="off" name="password" class="form-control">
 								</div> 
 								<div class="form-group text-right">
-									<button class="btn btn-primary btn-block" name="submit" style="font-family: Poppins;">Iniciar</button>
+									<button class="btn btn-primary btn-block" name="submit" style="font-family: Poppins;">Ingresar</button>
 								</div>
 							</form>
 						</div>
@@ -196,7 +195,7 @@
 		</section>
 
 
-		<footer class="ftco-footer ftco-bg-dark ftco-section img" style="background-image: url(images/bg_2.jpg); background-attachment:fixed;">
+    <footer class="ftco-footer ftco-bg-dark ftco-section img" style="background-image: url(images/escuela-1.png); background-attachment:fixed;">
     	<div class="overlay"></div>
       <div class="container">
         <div class="row mb-5">

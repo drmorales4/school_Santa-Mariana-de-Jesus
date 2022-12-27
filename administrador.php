@@ -5,6 +5,7 @@
     include("dll/class_mysqli_7.php");
     use PhpOffice\PhpSpreadsheet\IOFactory;
     session_start();
+    
     if(!(isset($_SESSION['email'])))
     {
 
@@ -65,7 +66,7 @@
                     </li>
                     <li <?php if(@$_GET['q']==1) echo'class="nav-link"'; ?>><a href="administrador.php?q=1" style="font-family: 'Roboto', sans-serif; font-size: 20px;"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-dash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M11 14s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1h10zm-9.995-.944v-.002.002zM1.022 13h9.956a.274.274 0 0 0 .014-.002l.008-.002c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664a1.05 1.05 0 0 0 .022.004zm9.974.056v-.002.002zM6 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm2 2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z"/>
-                        </svg> Gestionar Usuarios</a>
+                        </svg> Gestión Usuarios</a>
                     </li>
                     <li <?php if(@$_GET['q']==3) echo'class="nav-link"'; ?>><a href="administrador.php?q=3" style="font-family: 'Roboto', sans-serif; font-size: 20px;"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M11 14s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1h10zm-9.995-.944v-.002.002zM1.022 13h9.956a.274.274 0 0 0 .014-.002l.008-.002c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664a1.05 1.05 0 0 0 .022.004zm9.974.056v-.002.002zM6 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm4.5 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
@@ -90,7 +91,7 @@
                     <?php if(@$_GET['q']==0){
                         echo '<h1 style="color: #FD7E14;">Bienvenido '.$name.' '.$apellidos.'</h1>';
                     echo '<h4 style="color: blue;">Usted es '.$tipo_usuario.'</h4>
-                    <h2>Este es el panel de control, en el lado izquierdo tienes algunas opciones.</h2>';
+                    <h3>Este es el panel de control de los Administradores</h3>';
                     }                
                     ?>
 
@@ -99,7 +100,7 @@
 
                     $result = mysqli_query($con,"SELECT * FROM user") or die('Error');
 
-                        echo '<center><h3 style="color: #FD7E14; font-size: 35px;">Lista de Usuarios</h3>
+                        echo '<center><h3 style="font-family: Poppins;  margin-bottom: 20px;">USUARIOS ACTIVOS</h3>
                         <nav class="navbar navbar-light bg-light">
                             
                         </nav>
@@ -112,7 +113,7 @@
                                     <th><b>ID Usuario</b></th>
                                     <th><b>Nombre</b></th>
                                     <th><b>Apellido</b></th>
-                                    <th><b>Correo</b></th>
+                                    <th><b>Username</b></th>
                                     <th><b>Tipo</b></th>
                                     <th><b>Rol</b></th><th>
                                     <b>Eliminar</b></th>
@@ -159,7 +160,7 @@
                             <div class="row">
                             <div class="col-md-3"></div><div class="col-md-6" style="margin-top:10px;">
                             <center><h4 style="font-family: Poppins;  margin-bottom: 20px;">CREAR USUARIOS</h4></center><br>   
-                            <form class="form-horizontal title1" name="form" action="#"  method="POST" enctype="multipart/form-data">
+                            <form autocomplete="off" class="form-horizontal title1" name="form" action="#"  method="POST" enctype="multipart/form-data">
                                 <fieldset>
                                             <div class="form-group">
                                                 <labe style="font-family: Poppins;">ID Usuario:</label>
@@ -174,7 +175,7 @@
                                                 <input type="text" name="apellidos" class="form-control" required />
                                             </div>
                                             <div class="form-group">
-                                                <label style="font-family: Poppins;">User name:</label>
+                                                <label style="font-family: Poppins;">Username:</label>
                                                 <input type="" name="email" class="form-control" required />
                                             </div>
                                             <div class="form-group">
@@ -182,6 +183,8 @@
                                                 <input type="password" name="password" class="form-control" required />
                                             </div>
                                             <div class="form-group">
+                                                <label style="font-family: Poppins;">Tipo de Usuario:</label>
+
                                                 <select class="form-select" name="tipo_usuario">
                                                   <option selected>Seleccione el tipo de Usuario</option>
                                                   <option value="Estudiante">Estudiante</option>
@@ -259,7 +262,7 @@
                                 }
                                 else{
                                     $str="insert into user set idUser='$idUser', nombres='$nombres',apellidos='$apellidos',email='$email',password='$password', tipo_usuario='$tipo_usuario', rol='$rol'";
-                                    if($rol=="Admin"){
+                                    if($rol=="Usuario" or $rol=="Admin"){
                                         if((mysqli_query($con,$str))){   
                                         echo '<center><div class="alert alert-success alert-dismissable">
                                         <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -279,7 +282,7 @@
 
                     $result = mysqli_query($con,"SELECT * FROM comentario") or die('Error');
 
-                        echo '<center><h3 style="color: #FD7E14; font-size: 35px;">Comentarios</h3>
+                        echo '<center><h3 style="font-family: Poppins;  margin-bottom: 20px;">COMENTARIOS</h3>
                         <nav class="navbar navbar-light bg-light">
                             
                         </nav>

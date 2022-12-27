@@ -80,19 +80,18 @@
                 if(@$_GET['q']==0){
                     echo '<h1 style="color: #FD7E14;">Bienvenido '.$name.' '.$apellidos.'</h1>';
                     
-                    echo '<h2 style="color: #FD7E14;">Usted es '.$tipo_usuario.'</h2>
+                    echo '<h4 style="color: blue;">Usted es '.$tipo_usuario.'</h4>
                     
-                    <h4>En este panel podras dejar tu comentario.</h4>
 
 
                     <div class="row">
                             <div class="col-md-3"></div><div class="col-md-6" style="margin-top:10px;">
                             <center><h4 style="font-family: Poppins;  margin-bottom: 20px;">Deja tu comentario</h4></center><br>   
-                            <form class="form-horizontal title1" name="form" action="#"  method="POST" enctype="multipart/form-data">
+                            <form autocomplete="off" class="form-horizontal title1" name="form" action="#"  method="POST" enctype="multipart/form-data">
                                 <fieldset>
-                                    <div class="form-group">
+                                    <div class="form-comentario">
                                         <labe style="font-family: Poppins;">Comentario:</label>
-                                        <input type="text" name="comentario" class="form-control" required />
+                                        <input  type="text" name="comentario" class="form-control" required />
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12 control-label" for=""></label>

@@ -4,7 +4,7 @@ section.misionVision{
 
 }
 .logo img{ 
-  height:70px;
+  height:50px;
 
 }
 .logofooter img{
@@ -16,4 +16,20 @@ section.misionVision{
 nav{
   position: fixed;
   box-shadow: 0 0 10px 0  rgba(0, 0, 0, .5);
+}
+
+.docentes img{
+  text-align: center;
+
+}
+
+nav a:hover{
+  border-bottom: 1px solid #1498a4;
+  transition: 1s;
+  background: #167ce9;
+  border-radius: 10;
+}
+
+section.ftco-freeTrial{
+  background-color:#F08080;
 }
